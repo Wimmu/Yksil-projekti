@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 app.use('/public', express.static('public'));
 
-app.get('/api/v1/cats', (req, res) => {
+app.get('/api/v1/cat', (req, res) => {
   const cat = {
     cat_id: 1,
     name: 'Fluffy',

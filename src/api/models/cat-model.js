@@ -1,7 +1,7 @@
 import promisePool from '../../utils/database.js';
 
 const listAllCats = async () => {
-  const [rows] = await promisePool.query('SELECT * FROM wsk_cats');
+  const [rows] = await promisePool.query('SELECT wsk_cats.*, wsk_users.name AS owner_name FROM wsk_cats JOIN wsk_users ON wsk_cats.owner = wsk_users.user_id');
   console.log('rows', rows);
   return rows;
 };
@@ -47,4 +47,14 @@ const removeCat = async (id) => {
   return {message: 'success'};
 };
 
-export {listAllCats, findCatById, addCat, modifyCat, removeCat};
+const findCatsByUserId = async (userId) => {
+  try {
+    const [rows] = await promisePool.execute('SELECT * FROM wsk_cats WHERE owner = ?', [userId]);
+    return rows;
+  } catch (error) {
+    console.error('Error fetching cats by user ID:', error);
+    throw error;
+  }
+};
+
+export {listAllCats, findCatById, addCat, modifyCat, removeCat, findCatsByUserId};

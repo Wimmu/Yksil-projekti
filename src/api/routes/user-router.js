@@ -10,18 +10,13 @@ import {
 
 const userRouter = express.Router();
 
-const logRequest = (req, res, next) => {
-  console.log('Request Body:', req.body);
-  next(); // Call next middleware in the chain
-};
-
 userRouter.route('/')
-  .get(getUser)
-  .post(logRequest, postUser);
+  .get(getUser) //List all users
+  .post(postUser); //Add new user
 
 userRouter.route('/:id')
-  .get(getUserById)
-  .put(putUser)
-  .delete(deleteUser);
+  .get(getUserById) //Find user by ID
+  .put(putUser) //Modify user
+  .delete(deleteUser); //Remove user
 
 export default userRouter;

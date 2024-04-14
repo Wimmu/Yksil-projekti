@@ -1,5 +1,7 @@
 import express from 'express';
 import api from './api/index.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 

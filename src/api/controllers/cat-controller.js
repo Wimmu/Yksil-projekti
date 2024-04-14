@@ -1,38 +1,61 @@
 import {addCat, findCatById, listAllCats} from "../models/cat-model.js";
 
-const getCat = (req, res) => {
-  res.json(listAllCats());
+const getCat = async (req, res) => {
+  try {
+    const cats = await listAllCats();
+    res.json(cats);
+  } catch (error) {
+    console.error('Error fetching cats:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 };
 
-const getCatById = (req, res) => {
-  const cat = findCatById(req.params.id);
-  if (cat) {
+const getCatById = async (req, res) => {
+  try {
+    const cat = await findCatById(req.params.id);
     res.json(cat);
-  } else {
-    res.sendStatus(404);
+  } catch (error) {
+    console.error('Error fetching cat:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 };
 
-const postCat = (req, res) => {
-  console.log('Form Data:', req.body);
-  console.log('File Data:', req.file);
-  const result = addCat(req.body);
-  if (result.cat_id) {
-    res.status(201);
+const postCat = async (req, res) => {
+  try {
+    const result = await addCat(req.body);
     res.json({message: 'New cat added.', result});
-  } else {
-    res.sendStatus(400);
+  } catch (error) {
+    console.error('Error adding cat:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 };
 
-const putCat = (req, res) => {
-  // not implemented in this example, this is future homework
-  res.sendStatus(200);
+const putCat = async (req, res) => {
+  try {
+    const result = await modifyCat(req.body, req.params.id);
+    if (result) {
+      res.json(result);
+    } else {
+      res.sendStatus(404);
+    }
+  } catch (error) {
+    console.error('Error modifying cat:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 };
 
-const deleteCat = (req, res) => {
-  // not implemented in this example, this is future homework
-  res.sendStatus(200);
+const deleteCat = async (req, res) => {
+  try {
+    const result = await removeCat(req.params.id);
+    if (result) {
+      res.json(result);
+    } else {
+      res.sendStatus(404);
+    }
+  } catch (error) {
+    console.error('Error deleting cat:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 };
 
 export {getCat, getCatById, postCat, putCat, deleteCat};

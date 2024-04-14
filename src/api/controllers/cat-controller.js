@@ -13,6 +13,7 @@ const getCat = async (req, res) => {
 
 const getCatById = async (req, res) => {
   try {
+
     const cat = await findCatById(req.params.id);
     res.json(cat);
   } catch (error) {

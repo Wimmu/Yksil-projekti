@@ -14,7 +14,8 @@ const getCatById = (req, res) => {
 };
 
 const postCat = (req, res) => {
-  console.log('post cat', req.body, req.file);
+  console.log('Form Data:', req.body);
+  console.log('File Data:', req.file);
   const result = addCat(req.body);
   if (result.cat_id) {
     res.status(201);

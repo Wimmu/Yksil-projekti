@@ -1,4 +1,4 @@
-import {addUser, findUserById, listAllUsers, modifyUser, removeUser} from "../models/user-model.js";
+import {addUser, findUserById, listAllUsers} from "../models/user-model.js";
 
 const getUser = async (req, res) => {
   try {
@@ -26,13 +26,9 @@ const getUserById = async (req, res) => {
 
 const postUser = async (req, res) => {
   try {
+    console.log('req.body', req.body)
     const result = await addUser(req.body);
-    if (result.user_id) {
-      res.status(201);
-      res.json({message: 'New user added.', result});
-    } else {
-      res.sendStatus(400);
-    }
+    res.json({message: 'New user added.', result});
   } catch (error) {
     console.error('Error adding user:', error);
     res.status(500).json({ error: 'Internal server error' });

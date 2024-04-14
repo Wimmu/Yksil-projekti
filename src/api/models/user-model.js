@@ -27,16 +27,20 @@ const findUserById = async (id) => {
 
 const addUser = async (user) => {
   try {
+    console.log('Received user data:', user);
     const {name, username, email, password, role} = user;
     const sql = `INSERT INTO wsk_users (name, username, email, password, role)
                  VALUES (?, ?, ?, ?, ?)`;
+    if (!name || !username || !email || !password || !role) {
+      throw new Error(`Missing required user properties ${name} ${username} ${email} ${password} ${role}`);
+    }
     const params = [name, username, email, password, role];
-    const [rows] = await promisePool.execute(sql, params);
+    const rows = await promisePool.execute(sql, params);
     console.log('rows', rows);
-    if (rows.affectedRows === 0) {
+    if (rows[0].affectedRows === 0) {
       return false;
     }
-    return {user_id: rows.insertId};
+    return {user_id: rows[0].insertId};
   } catch (error) {
     console.error('Error adding user:', error);
     throw error;

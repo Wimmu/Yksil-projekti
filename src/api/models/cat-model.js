@@ -1,5 +1,3 @@
-// Note: db functions are async and must be called with await from the controller
-// How to handle errors in controller?
 import promisePool from '../../utils/database.js';
 
 const listAllCats = async () => {

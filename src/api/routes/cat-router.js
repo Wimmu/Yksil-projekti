@@ -7,6 +7,7 @@ import {
   postCat,
   putCat,
   deleteCat,
+  getCatsByUserId
 } from '../controllers/cat-controller.js';
 
 const catRouter = express.Router();
@@ -22,12 +23,14 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 catRouter.route('/')
-  .get(getCat)
-  .post(upload.single('catImage'), postCat);
+  .get(getCat) // Get all cats
+  .post(upload.single('catImage'), postCat); // Add a new cat
 
 catRouter.route('/:id')
-  .get(getCatById)
-  .put(putCat)
-  .delete(deleteCat);
+  .get(getCatById) // Get a cat by id
+  .put(putCat) // Modify a cat
+  .delete(deleteCat); // Delete a cat
+
+catRouter.get('/user/:userId', getCatsByUserId);
 
 export default catRouter;

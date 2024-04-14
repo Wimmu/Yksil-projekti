@@ -1,4 +1,4 @@
-import {addCat, findCatById, listAllCats} from "../models/cat-model.js";
+import {addCat, findCatById, listAllCats, modifyCat, removeCat, findCatsByUserId} from "../models/cat-model.js";
 
 const getCat = async (req, res) => {
   try {
@@ -58,4 +58,20 @@ const deleteCat = async (req, res) => {
   }
 };
 
-export {getCat, getCatById, postCat, putCat, deleteCat};
+const getCatsByUserId = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const cats = await findCatsByUserId(userId);
+
+    if (cats.length === 0) {
+      return res.status(404).json({ message: 'No cats found for the specified user ID.' });
+    }
+
+    res.json(cats);
+  } catch (error) {
+    console.error('Error fetching cats by user ID:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+export {getCat, getCatById, postCat, putCat, deleteCat, getCatsByUserId};

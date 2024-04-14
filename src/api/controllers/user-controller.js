@@ -1,5 +1,6 @@
-import {addUser, findUserById, listAllUsers} from "../models/user-model.js";
+import {addUser, findUserById, listAllUsers, modifyUser, removeUser} from "../models/user-model.js";
 
+// TESTED
 const getUser = async (req, res) => {
   try {
     const users = await listAllUsers();
@@ -10,6 +11,7 @@ const getUser = async (req, res) => {
   }
 };
 
+// TESTED
 const getUserById = async (req, res) => {
   try {
     const user = await findUserById(req.params.id);
@@ -24,9 +26,9 @@ const getUserById = async (req, res) => {
   }
 };
 
+// TESTED
 const postUser = async (req, res) => {
   try {
-    console.log('req.body', req.body)
     const result = await addUser(req.body);
     res.json({message: 'New user added.', result});
   } catch (error) {
@@ -35,6 +37,7 @@ const postUser = async (req, res) => {
   }
 };
 
+// TESTED
 const putUser = async (req, res) => {
   try {
     const result = await modifyUser(req.body, req.params.id);
@@ -49,6 +52,7 @@ const putUser = async (req, res) => {
   }
 };
 
+// TESTED
 const deleteUser = async (req, res) => {
   try {
     const result = await removeUser(req.params.id);

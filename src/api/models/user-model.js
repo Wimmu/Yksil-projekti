@@ -1,5 +1,6 @@
 import promisePool from '../../utils/database.js';
 
+// TESTED
 const listAllUsers = async () => {
   try {
     const [rows] = await promisePool.query('SELECT * FROM wsk_users');
@@ -11,6 +12,7 @@ const listAllUsers = async () => {
   }
 };
 
+// TESTED
 const findUserById = async (id) => {
   try {
     const [rows] = await promisePool.execute('SELECT * FROM wsk_users WHERE user_id = ?', [id]);
@@ -25,18 +27,14 @@ const findUserById = async (id) => {
   }
 };
 
+// TESTED
 const addUser = async (user) => {
   try {
-    console.log('Received user data:', user);
     const {name, username, email, password, role} = user;
     const sql = `INSERT INTO wsk_users (name, username, email, password, role)
                  VALUES (?, ?, ?, ?, ?)`;
-    if (!name || !username || !email || !password || !role) {
-      throw new Error(`Missing required user properties ${name} ${username} ${email} ${password} ${role}`);
-    }
     const params = [name, username, email, password, role];
     const rows = await promisePool.execute(sql, params);
-    console.log('rows', rows);
     if (rows[0].affectedRows === 0) {
       return false;
     }
@@ -47,6 +45,7 @@ const addUser = async (user) => {
   }
 };
 
+// TESTED
 const modifyUser = async (user, id) => {
   try {
     const sql = promisePool.format(`UPDATE wsk_users SET ? WHERE user_id = ?`, [user, id]);
@@ -62,21 +61,19 @@ const modifyUser = async (user, id) => {
   }
 };
 
+// TESTED
 const removeUser = async (id) => {
   let connection;
   try {
     connection = await promisePool.getConnection();
     await connection.beginTransaction(); // Start transaction
 
+    // Delete associated cats
+    await connection.execute('DELETE FROM wsk_cats WHERE owner = ?', [id]);
+
     // Delete user
     const [userDeleteRows] = await connection.execute('DELETE FROM wsk_users WHERE user_id = ?', [id]);
     console.log('Deleted user rows:', userDeleteRows);
-
-    // If user was deleted successfully, delete associated cats
-    if (userDeleteRows.affectedRows > 0) {
-      const [catDeleteRows] = await connection.execute('DELETE FROM cats WHERE owner = ?', [id]);
-      console.log('Deleted cat rows:', catDeleteRows);
-    }
 
     // Commit transaction
     await connection.commit();
@@ -96,5 +93,6 @@ const removeUser = async (id) => {
     }
   }
 };
+
 
 export {listAllUsers, findUserById, addUser, modifyUser, removeUser};

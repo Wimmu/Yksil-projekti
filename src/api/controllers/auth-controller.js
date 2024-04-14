@@ -1,31 +1,33 @@
-import { findUserByUsernameAndPassword } from '../models/user-model.js';
+import { login } from '../models/user-model.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import {getUserByUsername} from '../models/user-model.js';
 import 'dotenv/config';
 
 const loginUser = async (req, res) => {
   try {
-    const { username, password } = req.body;
-    // Query the database to find the user by username and password
-    const user = await findUserByUsernameAndPassword(username, password);
-    if (user) {
-      // User found, generate and send JWT token as response
-      const token = generateJWTToken(user);
-      res.json({ token });
-    } else {
-      // User not found or password incorrect
-      res.status(401).json({ error: 'Invalid username or password' });
+    const {username, password} = req.body;
+
+    const user = await login(username);
+
+    if (!user) {
+      return res.status(401).json({ message: 'Invalid username' });
     }
+
+    if (!bcrypt.compareSync(password, user.password)) {
+      return res.status(401).json({ message: 'Invalid password' });
+    }
+
+    await postLogin(req, res)
+
   } catch (error) {
-    console.error('Error logging in user:', error);
+    console.error('Error logging in:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 };
 
 const postLogin = async (req, res) => {
   console.log('postLogin', req.body);
-  const user = await getUserByUsername(req.body.username);
+  const user = await login(req.body.username);
   if (!user) {
     res.sendStatus(401);
     return;
@@ -59,4 +61,5 @@ const getMe = async (req, res) => {
   }
 };
 
-export { postLogin, loginUser, getMe };
+
+export { loginUser, postLogin, getMe };

@@ -94,5 +94,21 @@ const removeUser = async (id) => {
   }
 };
 
+const login = async (username) => {
+  try {
+    const [rows] = await promisePool.execute('SELECT * FROM wsk_users WHERE username = ?', [username]);
+    return rows[0];
+  } catch (error) {
+    console.error('Error finding user by username:', error);
+    throw error;
+  }
+};
 
-export {listAllUsers, findUserById, addUser, modifyUser, removeUser};
+export {
+  listAllUsers,
+  findUserById,
+  addUser,
+  modifyUser,
+  removeUser,
+  login
+};

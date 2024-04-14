@@ -32,7 +32,17 @@ const postCat = async (req, res) => {
 
 const putCat = async (req, res) => {
   try {
-    const result = await modifyCat(req.body, req.params.id);
+    const catId = req.params.id;
+    const cat = await findCatById(catId);
+    if (!cat) {
+      return res.sendStatus(404).json({ error: `No cat found with id ${catId}` });
+    }
+
+    if (cat.owner !== req.user.user_id) {
+      return res.status(403).json({ error: 'You are not the owner of this cat.' });
+    }
+
+    const result = await modifyCat(req.body, catId);
     if (result) {
       res.json(result);
     } else {

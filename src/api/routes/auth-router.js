@@ -5,8 +5,8 @@ import {authenticateToken} from '../middlewares/authentication.js';
 
 const authRouter = express.Router();
 
-authRouter.post('/login', loginUser);
-
+// Route for user login
+authRouter.route('/login').post(loginUser);
 authRouter.route('/me').get(authenticateToken, getMe);
 
 

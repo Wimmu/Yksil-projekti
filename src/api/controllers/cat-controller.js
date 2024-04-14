@@ -5,6 +5,7 @@ const getCat = async (req, res) => {
     const cats = await listAllCats();
     res.json(cats);
   } catch (error) {
+
     console.error('Error fetching cats:', error);
     res.status(500).json({ error: 'Internal server error' });
   }

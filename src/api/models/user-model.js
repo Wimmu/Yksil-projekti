@@ -97,4 +97,39 @@ const removeUser = async (id) => {
   }
 };
 
-export {listAllUsers, findUserById, addUser, modifyUser, removeUser};
+const findUserByUsernameAndPassword = async (username, password) => {
+  try {
+    // Query the database to find the user by username and password
+    const [rows] = await promisePool.execute('SELECT * FROM wsk_users WHERE username = ? AND password = ?', [username, password]);
+    if (rows.length === 0) {
+      return null; // User not found
+    }
+    return rows[0]; // Return the user object
+  } catch (error) {
+    console.error('Error finding user by username and password:', error);
+    throw error;
+  }
+};
+
+const login = async (user) => {
+  const sql = `SELECT *
+              FROM wsk_users
+              WHERE username = ?`;
+  const params = [user.username];
+  try {
+    const [rows] = await promisePool.execute(sql, params);
+    console.log('rows', rows);
+    if (rows.length === 0) {
+      return false;
+    }
+    return rows[0];
+  } catch (error) {
+    console.error('Error finding user by username:', error);
+    throw error;
+  } finally {
+    promisePool.end();
+  }
+}
+
+
+export {login, findUserByUsernameAndPassword, listAllUsers, findUserById, addUser, modifyUser, removeUser};

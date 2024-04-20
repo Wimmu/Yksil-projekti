@@ -1,0 +1,64 @@
+
+
+.lounas-header {
+    text-align: center;
+    font-size: 2rem;
+    color: #5e606c;
+}
+
+.menu-section{
+    margin: 20px;
+    padding: 30px;
+}
+
+.daymenu-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.daymenu {
+    width: 40%; /* Adjust as needed */
+    margin: 10px;
+    padding: 5px;
+    border: 3px solid #e4babe;
+    border-radius: 20px;
+    background-color: #fcf1ef;
+    max-width: 300px;
+}
+
+.daymenu h3 {
+    text-align: center;
+    background-color: #e4babe;
+    border-radius: 20px;
+    font-size: 18px;
+    color: #5e606c;
+}
+
+.daymenu p {
+    padding-left: 10px;
+    padding-top: 3px;
+    color: #5e606c;
+
+}
+
+@media screen and (max-width: 600px) {
+    .daymenu {
+        width: 80%;
+    }
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-left: 0px;
+}
+
+.header-container button {
+    /*display: none;*/
+    padding: 10px 10px;
+    margin-left: 10px;
+}
+

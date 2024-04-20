@@ -1,0 +1,144 @@
+body {
+    color: #5e606c;
+}
+
+#popular-items,
+#instagram {
+    margin: 40px 0;
+}
+
+#popular-items h2,
+#instagram h2 {
+    text-align: center;
+}
+
+.container2 {
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+
+.text-container h2,
+.text-container p {
+    text-align: left;
+}
+
+.text-container {
+    width: 100%;
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+.intro-image {
+    width: 100%;
+    height: auto;
+}
+
+#introduction {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+@media (min-width: 600px) {
+    .text-container {
+        width: 45%;
+        margin: 40px 0;
+    }
+
+    .intro-image {
+        width: 45%;
+    }
+
+    #introduction {
+        margin: 40px 0;
+    }
+}
+
+#introduction h2,
+#introduction p {
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#todays-menu {
+    text-align: center;
+    font-size: 2rem;
+    color: #5e606c;
+}
+
+#todays-menu ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+#todays-menu h2 {
+    text-align: center;
+    background-color: #e4babe;
+    border-radius: 20px;
+    font-size: 24px;
+    padding: 10px;
+    /* Increase this value to make the background larger */
+    color: #5e606c;
+}
+#todays-menu p {
+    padding-left: 10px;
+    padding-top: 3px;
+    color: #5e606c;
+}
+/*
+#popular-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+*/
+#popular-items h2 {
+    text-align: center;
+    background-color: #e4babe;
+    border-radius: 20px;
+    font-size: 24px;
+    padding: 10px;
+    color: #5e606c;
+}
+
+#popular-items .items-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.item img {
+    width: 200px;
+    /* Adjust as needed */
+    height: 200px;
+    /* Adjust as needed */
+    object-fit: cover;
+}
+#instagram img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+}

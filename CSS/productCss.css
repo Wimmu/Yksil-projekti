@@ -1,0 +1,95 @@
+h2 {
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.productList {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.product {
+    position: relative;
+    width: calc(27% - 20px);
+    height: auto;
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    border-style: solid;
+    border-width: medium;
+    border-radius: 20px;
+    border-color: #5e606c;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.product:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ced3d7;
+}
+
+@media screen and (max-width: 900px){
+    .product {
+        width: calc(40% - 20px);
+    }
+}
+@media screen and (max-width: 600px) {
+    .product {
+        width: calc(85% - 20px);
+    }
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+h3  {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+li p {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.button-wrapper {
+    height: 40px;
+}
+
+button {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    padding: 10px 30px;
+}
+
+/* Tämä oli testi. Ei toimi vielä */
+.infoBox {
+    display: none;
+    position: absolute;
+    top: 100%; /* Adjust this value to position the box beneath the product */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 999; /* Ensure it appears above other content */
+}

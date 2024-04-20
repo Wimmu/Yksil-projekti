@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/profile.css">
+    <script src="../JS/profile.js" defer></script>
+</head>
+<header>
+    <div class="container">
+        <h1 class="logo">Logo</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="menu.html">Lounas</a></li>
+                <li><a href="products.html">Tuotteet</a></li>
+                <li><a href="login.html">Kirjaudu</a></li>
+                <li><a href="shoppingcart.html" class="shopping-cart-link"><img src="../IMG/shopping_cart.png" class="shopping-cart-image"></a></li>
+                <li><a href="profile.html" class="profile-icon-link"><img src="../IMG/profile_icon.png" class="profile-icon-image"></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<body>
+<main>
+    <section class="profile-section">
+        <h2 id="welcomeText">Welcome to your profile, !</h2>
+        <div class="profile-info">
+            <div class="profile-picture">
+                <img src="../IMG/empty.jpg" alt="Profile Picture">
+            </div>
+            <div class="user-details" id="userDetails">
+                <p><strong>Username:</strong> <span id="userUsername"></span></p>
+                <p><strong>Full Name:</strong> <span id="userFullName"></span></p>
+                <p><strong>Email:</strong> <span id="userEmail"></span></p>
+                <p><strong>Address:</strong> <span id="userAddress"></span></p>
+            </div>
+        </div>
+        <div class="edit-profile">
+            <button class="change-password-btn">Change Password</button>
+            <button class="edit-details-btn" onclick="toggleProfileEdit()">Edit Account Details</button>
+        </div>
+    </section>
+
+    <section class="order-history-section">
+        <div class="order-history-top">
+            <h2>Order history</h2>
+            <button id="orderToggleButton" onclick="toggleOrderHistory()">Hide</button>
+        </div>
+        <div id="order-history" class="order-history hidden">
+
+        </div>
+    </section>
+
+    <section class="motd-section">
+        <div class="motd-top">
+            <h2>Meal of the Day</h2>
+            <button id="motdToggleButton" onclick="toggleMotd()">Show</button>
+        </div>
+        <div class="motd-dropdown hidden" id="motd-dropdown">
+            <div class="motd-left">
+                <button onclick="toggleDropdown()" class="motd-select-dropdown">Select Meal</button>
+                <div id="dropdownContent" class="dropdown-content">
+                    <!-- Dropdown content goes here -->
+                </div>
+            </div>
+            <div class="motd-right">
+                <h3>Current:</h3>
+                <div class="selected-meal">
+                    <img src="../IMG/empty.jpg" id="selectedMealImage" alt="Selected Meal">
+                    <div class="selected-meal-info">
+                        <p id="selectedMeal">Name of the meal</p>
+                        <p id="selectedPrice">12.49€</p>
+                        <p id="selectedDescription">This is a short description about the product that is chosen for the meal of the day. This is a short description about the product that is chosen for the meal of the day. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="management-section">
+        <div class="management-top">
+            <h2>Manage products</h2>
+            <button id="managementToggleButton" onclick="toggleManagement()">Show</button>
+        </div>
+        <div id="management" class="management hidden">
+            <div class="product-tabs">
+                <button onclick="openTab('removeProductTab')">Add Product</button>
+                <button onclick="openTab('addProductTab')">Remove Product</button>
+            </div>
+            <div id="removeProductTab" class="product-tab">
+                <h2>Remove Product</h2>
+                <div class="remove-product-form">
+                    <label for="productDropdown">Select Product:</label>
+                    <select id="productDropdown" class="productDropdown">
+                        <!-- Options will be dynamically added here -->
+                    </select>
+                    <button onclick="removeProduct()">Delete</button>
+                </div>
+            </div>
+
+            <div id="addProductTab" class="product-tab">
+                <h2>Add Product</h2>
+                <div class="add-product-form">
+                    <label for="productName">Name:</label>
+                    <input type="text" id="productName">
+                    <label for="productDescription">Description:</label>
+                    <textarea id="productDescription"></textarea>
+                    <label class="productprice" for="productPrice">Price:</label>
+                    <input type="text" id="productPrice">
+                    <label>Allergens:</label>
+                    <div class="allergens" id="allergens">
+                        <input type="checkbox" id="dairy" name="allergen" value="dairy">
+                        <label for="dairy">Dairy</label><br>
+                        <input type="checkbox" id="gluten" name="allergen" value="gluten">
+                        <label for="gluten">Gluten</label><br>
+                        <input type="checkbox" id="peanuts" name="allergen" value="peanuts">
+                        <label for="peanuts">Peanuts</label><br>
+                        <input type="checkbox" id="fish" name="allergen" value="fish">
+                        <label for="fish">Fish</label><br>
+                        <input type="checkbox" id="soy" name="allergen" value="soy">
+                        <label for="soy">Soy</label><br>
+                    </div>
+                    <div class="file-input-container">
+                        <label for="productImage">Image:</label>
+                        <input type="file" id="productImage" class="hidden-file-input">
+                        <button onclick="document.getElementById('productImage').click()">Choose Image</button>
+                    </div>
+
+                    <button onclick="saveProduct()">Save Product</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<object type="text/html" data="footer.html" style="width:100%"></object>
+</body>
+</html>

@@ -1,0 +1,418 @@
+.profile-section,
+.order-history-section,
+.motd-section,
+.management-section {
+    margin: 20px;
+    padding: 30px;
+}
+
+/*------------------- PROFILE --------------------------------*/
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    margin-right: 30px;
+    margin-top: 20px;
+    object-fit: cover;
+    max-width: 150px;
+    max-height: 150px;
+    min-height: 150px;
+    min-width: 150px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border: 4px solid #e4babe;
+    border-radius: 50%;
+}
+
+.user-details {
+    font-size: 16px;
+}
+
+.user-details p {
+    padding-top: 10px;
+}
+
+.edit-profile {
+    margin-top: 20px;
+}
+
+.change-password-btn,
+.edit-details-btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.profile-info input[type="text"] {
+    width: auto;
+    font-size: 16px;
+    text-align: left;
+    margin-right: 10px;
+    border: 2px solid #e4babe;
+    background-color: #f8eded;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.profile-info input[type="text"]:disabled {
+    border: none;
+    background-color: transparent;
+    width: auto;
+    font-size: 16px;
+    color: inherit;
+    text-align: left;
+}
+
+/*------------------- ORDER HISTORY --------------------------------*/
+.order {
+    margin-top: 10px;
+    background-color: #faefee;
+    padding: 10px 10px 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #e4babe;
+}
+
+.order-history-top,
+.motd-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-history {
+    margin-top: 10px;
+    max-height: 400px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.order-history.hidden {
+    max-height: 0;
+}
+
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+}
+
+/*---------------------- MEAL OF THE DAY -----------------------------*/
+.motd-dropdown {
+    margin-top: 10px;
+    max-height: 400px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.motd-dropdown.hidden {
+    max-height: 0;
+}
+
+.selected-meal {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.selected-meal img {
+    min-width: 160px;
+    max-width: 160px;
+    min-height: 130px;
+    max-height: 130px;
+    border-radius: 10%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.motd-right h3 {
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.selected-meal-info p {
+    margin: 0;
+    font-size: 18px;
+}
+
+#selectedDescription {
+    font-size: 15px;
+}
+
+#selectedPrice {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.motd-select-dropdown {
+    width: 200px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height: 200px; /* Set a maximum height for the dropdown */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.dropdown-content .item {
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: center; /* Align items vertically */
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+.dropdown-content .item img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dropdown-content .item-info {
+    flex: 1;
+}
+
+.dropdown-content .item:hover {
+    background-color: #f1f1f1;
+    border-radius: 20px;
+}
+
+.show {
+    display: block;
+}
+/*---------------------- MANAGEMENT -----------------------------*/
+
+.management {
+    margin-top: 10px;
+    max-height: 800px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    align-items: flex-start;
+}
+
+.management.hidden {
+    max-height: 0;
+}
+
+.management-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-management-section {
+    margin: 20px;
+    padding: 20px;
+}
+
+.product-tabs {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.product-tabs button {
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+#productDropdown {
+    width: 50%;
+    margin-right: 10px;
+}
+.product-tab {
+    display: none;
+}
+
+.product-tab.hidden {
+    display: block;
+}
+
+.remove-product-form label,
+.add-product-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.remove-product-form select,
+.add-product-form select,
+.remove-product-form input[type="text"],
+.add-product-form input[type="text"],
+.add-product-form textarea,
+.add-product-form input[type="file"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.remove-product-form button,
+.add-product-form button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.add-product-form input, textarea {
+    background-color: #faefee;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: 2px solid #e4babe;
+    width: 100%;
+}
+
+#productName {
+    width: 50%;
+}
+
+#productPrice {
+    width: 20%;
+}
+
+.add-product-form textarea {
+    height: 100px;
+    width: 90%;
+}
+
+/* Style checkboxes */
+.allergens input[type="checkbox"] {
+    /* Hide the default checkbox */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Provide custom dimensions for the checkbox */
+    width: 20px;
+    height: 20px;
+    /* Add custom border and background */
+    border: 2px solid #ccc;
+    background-color: #fff;
+    /* Add some padding for better appearance */
+    padding: 4px;
+    /* Position the checkbox relative to its container */
+    position: relative;
+    /* Add cursor pointer on hover */
+    cursor: pointer;
+    margin-top: 2px;
+    /* Adjust margin to create space between checkboxes */
+}
+
+/* Style checkbox label */
+.allergens label {
+    /* Adjust margin for better alignment */
+    margin-right: 20px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+/* Style checked state of the checkbox */
+.allergens input[type="checkbox"]:checked::before {
+    /* Display a checkmark using content */
+    content: "\2713"; /* Unicode checkmark character */
+    /* Position the checkmark */
+    position: absolute;
+    top: -3px;
+    left: 4px;
+    /* Customize the appearance of the checkmark */
+    font-size: 22px;
+    color: #555;
+}
+
+/* Arrange checkboxes in three columns */
+.allergens {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+/* Hide the default file input */
+.hidden-file-input {
+    display: none;
+}
+
+/* Style the custom button */
+.file-input-container button {
+    padding: 5px 12px;
+    background-color: #e4babe;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.file-input-container button:hover {
+    background-color: #d39a9a;
+}
+
+.productDropdown {
+    background-color: #faefee;
+    min-width: 160px;
+    max-height: 200px; /* Set a maximum height for the dropdown */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 8px 12px;
+    border: #e4babe 2px solid;
+    border-radius: 10px;
+}
+.productDropdown option {
+    cursor: pointer;
+}
+
+/*---------------------- MOBILE -----------------------------*/
+
+@media screen and (max-width: 600px) {
+    .profile-info {
+        display: block;
+        text-align: center;
+    }
+
+    .profile-picture {
+        margin: 0 auto;
+    }
+
+    .user-details {
+        text-align: left;
+    }
+
+    .edit-profile {
+        text-align: center;
+    }
+
+    .profile-section h2 {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .motd-dropdown {
+        display: block;
+    }
+
+    .motd-right {
+        display: block;
+    }
+
+    .selected-meal {
+        display: block;
+        align-items: center;
+        text-align: center;
+    }
+
+    .motd-right img {
+        margin: 0 auto;
+    }
+
+    .motd-select-dropdown {
+        margin: 0 auto;
+        display: block;
+    }
+}

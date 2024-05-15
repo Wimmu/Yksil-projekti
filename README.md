@@ -10,10 +10,10 @@ mahdollisuus kirjautua sisään ja valita oma suosikkiravintola.
 
 - Ravintoloita voi etsiä nimen perusteella hakukentästä.
 - Ravintolat voi järjestää aakkosjärjestykseen sekä osoitteen ja sijainnin perusteella.
-- Käyttäjät voivat nähdä ravintoloiden ruokalistat.
+- Ravintoloiden ruokalistat ovat näkyvillä.
 - Ravintoloiden yhteystiedot ovat näkyvillä.
-- Käyttäjät voivat nähdä ravintoloiden sijainnit kartalla.
-- Käyttäjät voivat kirjautua ja valita suosikkiravintolan.
+- Käyttäjä voi nähdä ravintoloiden sijainnit kartalla.
+- Käyttäjä voi kirjautua ja valita suosikkiravintolan.
 - Käyttäjä voi päivittää omia tietojaan ja lisätä profiilikuvan
 
 ## Teknologiat

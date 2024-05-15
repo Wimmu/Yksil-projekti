@@ -5,6 +5,7 @@ opiskelijaravintolat. Sivustolta löytyy tietoja erilaisista ravintoloista,
 niiden sijainneista, ruokalistoista ja yhteystiedoista. Lisäksi sivustolla on
 mahdollisuus kirjautua sisään ja valita oma suosikkiravintola.
 
+### Linkki sivulle: [StudentNom](https://users.metropolia.fi/~wilmais/yksil%c3%b6projekti/)
 ## Ominaisuudet
 
 - Ravintoloita voi etsiä nimen perusteella hakukentästä.
@@ -13,7 +14,7 @@ mahdollisuus kirjautua sisään ja valita oma suosikkiravintola.
 - Ravintoloiden yhteystiedot ovat näkyvillä.
 - Käyttäjät voivat nähdä ravintoloiden sijainnit kartalla.
 - Käyttäjät voivat kirjautua ja valita suosikkiravintolan.
-
+- Käyttäjä voi päivittää omia tietojaan ja lisätä profiilikuvan
 
 ## Teknologiat
 

@@ -1,0 +1,96 @@
+#profile-section {
+  margin-top: 20px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+.welcome-to-profile {
+  text-align: center;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: block;
+  border: #ff6a00 solid 4px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.51) 0px 0px 10px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-details p {
+  margin: 0;
+  padding: 8px;
+}
+
+#favourite-restaurant-section {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.delete-account-btn,
+.update-account-btn {
+  margin: 10px;
+}
+
+#edit-email,
+#edit-username {
+  max-width: 350px;
+}
+
+#editAccountModal {
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.restaurant-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffe5d2;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  margin: auto;
+}
+
+.restaurant-info p {
+  margin: 0;
+  padding: 8px;
+}
+
+.restaurant-info h2 {
+  margin: 5px;
+  padding: 8px;
+}
+
+.restaurant-info button {
+  margin: 5px;
+}
+
+#change-avatar-text {
+  background-color: #ff6a00;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  width: 150px;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+
+}

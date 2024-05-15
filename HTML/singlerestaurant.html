@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentNom</title>
+  <link rel="icon" type="image/x-icon" href="/IMG/faviconn.png">
+  <link rel="stylesheet" href="../CSS/main.css">
+  <link rel="stylesheet" href="../CSS/singlerestaurant.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+</head>
+<body>
+
+<header>
+  <nav>
+    <img class="logo" src="../IMG/logo-text.png">
+    <ul>
+      <li><a class="nav" href="index.html">Home</a></li>
+      <li><a class="nav" href="restaurants.html">Restaurants</a></li>
+      <li><a class="nav" href="map.html">Map</a></li>
+      <li><a class="nav" href="aboutus.html">About us</a></li>
+      <li><a class="nav" id="logout-btn"href="#">Log out</a></li>
+      <li><a id="profile-link" href="login.html"><img src="../IMG/user-login.png" id="image-login"></a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="restaurant-search-section">
+  <div class="restaurant-info">
+    <button onclick="window.location.href='../HTML/restaurants.html'">< Back to restaurants</button>
+    <h1 id="restaurant-name"></h1>
+    <p id="restaurant-address"></p>
+    <p id="restaurant-phone"></p>
+    <p id="restaurant-company"></p>
+  </div>
+
+  <div class="restaurant-content">
+    <div class="restaurant-menu">
+      <h2>Menu</h2>
+      <div id="menu-items" class="menu-items">
+        <!-- Menu items will be added here -->
+      </div>
+    </div>
+
+    <div class="restaurant-map">
+      <h2>Location</h2>
+        <div id="map" style="height: 300px;"></div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  <p>&copy; 2024 StudentNom</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin="" defer></script>
+<script src="../JAVASCRIPT/singlerestaurant.js" defer></script>
+<script src="../JAVASCRIPT/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentNom</title>
+  <link rel="icon" type="image/x-icon" href="/IMG/faviconn.png">
+  <link rel="stylesheet" href="../CSS/main.css">
+  <link rel="stylesheet" href="../CSS/restaurants.css">
+  <script src="../JAVASCRIPT/restaurants.js" defer></script>
+  <script src="../JAVASCRIPT/main.js" defer></script>
+</head>
+<body>
+<header>
+  <nav>
+    <img class="logo" src="../IMG/logo-text.png">
+    <ul>
+      <li><a class="nav" href="index.html">Home</a></li>
+      <li><a class="nav" href="restaurants.html">Restaurants</a></li>
+      <li><a class="nav" href="map.html">Map</a></li>
+      <li><a class="nav" href="aboutus.html">About us</a></li>
+      <li><a class="nav" id="logout-btn"href="#">Log out</a></li>
+      <li><a id="profile-link" href="login.html"><img src="../IMG/user-login.png" id="image-login"></a></li>
+    </ul>
+  </nav>
+</header>
+<section class="restaurant-search-section">
+  <div class="restaurants-table">
+    <h1>Restaurants</h1>
+    <div class="search-sort">
+      <input type="text" id="search-bar" placeholder="Search...">
+      <select id="sort-type" class="sort-bar">
+        <option value="name">Sort by Name</option>
+        <option value="address">Sort by Address</option>
+        <option value="nearest">Nearest</option>
+      </select>
+    </div>
+    <div id="restaurants-list" class="restaurants-list"> <!-- Changed class to id -->
+    </div>
+  </div>
+</section>
+<footer>
+  <p>&copy; 2024 StudentNom</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* ----------- HERO SECTION ----------------*/
+
+.hero {
+  background-image: url('../IMG/backround.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.hero h1 {
+  margin: 0;
+}
+
+/* ----------- FEATURED SECTION ----------------*/
+
+.featured-restaurants {
+  padding: 20px 0;
+  background-color: #fff6ee;
+  box-shadow: rgba(0, 0, 0, 0.46) 0px 0px 10px;
+
+}
+
+.featured-restaurants-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.restaurant-box {
+  width: 300px;
+  height: 180px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffe5d2;
+  border: 5px solid rgba(253, 106, 0, 0.48);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.restaurant-box:hover {
+  background-color: #ffd1b6;
+}
+
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* Add margin between rows */
+}
+
+

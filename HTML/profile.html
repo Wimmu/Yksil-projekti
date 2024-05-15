@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="/CSS/main.css">
+  <link rel="stylesheet" href="/CSS/profile.css">
+  <script src="../JAVASCRIPT/profile.js" defer></script>
+  <script src="../JAVASCRIPT/main.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <img class="logo" src="../IMG/logo-text.png">
+    <ul>
+      <li><a class="nav" href="index.html">Home</a></li>
+      <li><a class="nav" href="restaurants.html">Restaurants</a></li>
+      <li><a class="nav" href="map.html">Map</a></li>
+      <li><a class="nav" href="aboutus.html">About us</a></li>
+      <li><a class="nav" id="logout-btn"href="#">Log out</a></li>
+      <li><a id="profile-link" href="login.html"><img src="../IMG/user-login.png" id="image-login"></a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="profile-section">
+  <h1 class="welcome-to-profile">Welcome to your profile!</h1>
+  <div id="user-info">
+    <div class="image-container">
+      <img id="profile-picture" src="" alt="Profile Picture">
+      <input type="file" id="profile-image-input" style="display: none;">
+      <p id="change-avatar-text" style="display: none">Change avatar</p>
+
+      <div class="overlay">
+      </div>
+    </div>
+
+    <h2 id="username">Username</h2>
+    <div class="user-details">
+      <h3>Email:</h3>
+      <p id="email">Email</p>
+    </div>
+    <div class="user-details">
+      <h3>User ID:</h3>
+      <p id="id">Id</p>
+    </div>
+    <div class="user-details">
+      <h3>Role:</h3>
+      <p id="role">Role</p>
+    </div>
+  </div>
+</section>
+
+<section id="favourite-restaurant-section">
+  <h1>Your favourite restaurant</h1>
+  <div id="restaurant-info"></div>
+  <p id="fav-restaurant"></p>
+</section>
+
+<div class="user-details">
+  <button class="edit-account-btn">Edit Account Details</button>
+  <button class="delete-account-btn" onclick="deleteUser()">Delete Account</button>
+</div>
+
+<div id="editAccountModal" style="display: none;"class="modal">
+  <div class="modal-content">
+    <h2>Edit Account Details</h2>
+    <form id="edit-account-form">
+      <label for="edit-username">Username:</label><br>
+      <input type="text" id="edit-username" name="edit-username"><br>
+      <label for="edit-email">Email:</label><br>
+      <input type="email" id="edit-email" name="edit-email"><br>
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+
+
+<footer>
+  <p>&copy; 2024 StudentNom</p>
+</footer>
+
+</body>
+</html>

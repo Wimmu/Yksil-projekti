@@ -1,0 +1,71 @@
+
+.restaurant-search-section {
+  padding: 0;
+}
+
+.restaurant-info {
+  padding:30px;
+  background-image: url('../IMG/backround.jpg');
+  background-size: cover;
+  background-position: center;
+
+}
+
+.restaurant-info h1 {
+  padding-top: 30px;
+}
+
+.restaurant-menu {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.restaurant-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.restaurant-menu,
+.restaurant-map {
+  flex: 1;
+}
+
+.menu-items-box {
+  background-color: #ffe5d2;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.menu-day {
+  background-color: #ffd0b0;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.menu-day h2 {
+  text-align: center;
+  background: linear-gradient(to right, #ff6a00, #ffa12b); /* Gradient background */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.menu-items-box p {
+  padding: 0;
+  margin: 0;
+}
+
+.restaurant-map {
+  margin-right: 20px;
+  height: 500px;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}
